@@ -10,8 +10,8 @@ Pipeline machine learning end-to-end pada dua domain: klasifikasi penyakit kardi
 
 | Nama | NIM |
 |------|-----|
-| [Nama Anggota 1] | [NIM 1] |
-| [Nama Anggota 2] | [NIM 2] |
+| Muhamad Wildan Rizky |201012520001|
+| Haamid Ahmad Saragih |201012520025|
 
 ---
 
