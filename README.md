@@ -1,19 +1,19 @@
-# Mini Project: Tugas Besar Deep LEarning
+# Mini Project: Deep Learning Major Assignment
 
-Pipeline machine learning pada dua domain: klasifikasi penyakit kardiovaskular dan prediksi konsumsi energi bangunan.
-
----
-
-## Anggota Kelompok
-
-| Nama | NIM |
-|------|-----|
-| Muhamad Wildan Rizky |201012520001|
-| Haamid Ahmad Saragih |201012520025|
+Pipeline machine learning on two domains: cardiovascular disease classification and building energy consumption prediction.
 
 ---
 
-## Struktur Repository
+## Team Members
+
+| Name | Student ID |
+|------|------------|
+| Muhamad Wildan Rizky | 201012520001 |
+| Haamid Ahmad Saragih | 201012520025 |
+
+---
+
+## Repository Structure
 
 ```
 .
@@ -30,64 +30,64 @@ Pipeline machine learning pada dua domain: klasifikasi penyakit kardiovaskular d
 
 ---
 
-## Dataset
+## Datasets
 
-| # | Nama | Sumber | Sampel | Task |
-|---|------|--------|--------|------|
-| 1 | Cardiovascular Disease Dataset | [Kaggle](https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset) | ~70.000 | Binary Classification |
-| 2 | Appliances Energy Prediction | [UCI / Kaggle](https://www.kaggle.com/datasets/loveall/appliances-energy-prediction) | ~19.000 | Regression |
+| # | Name | Source | Samples | Task |
+|---|------|--------|---------|------|
+| 1 | Cardiovascular Disease Dataset | [Kaggle](https://www.kaggle.com/datasets/sulianova/cardiovascular-disease-dataset) | ~70,000 | Binary Classification |
+| 2 | Appliances Energy Prediction | [UCI / Kaggle](https://www.kaggle.com/datasets/loveall/appliances-energy-prediction) | ~19,000 | Regression |
 
-> Dataset tidak disertakan dalam repository karena ukuran file. Unduh dari tautan di atas dan letakkan di folder `dataset/`.
+> Datasets are not included in this repository due to file size. Download from the links above and place them in the `dataset/` folder.
 
 ---
 
 ## Pipeline
 
-Setiap dataset diproses melalui 4 tahap berurutan:
+Each dataset is processed through 4 sequential stages:
 
 ```
-Feature Engineering  →  Baseline Model  →  Hyperparameter Tuning  →  Analisis Laporan
+Feature Engineering  →  Baseline Model  →  Hyperparameter Tuning  →  Report Analysis
 ```
 
-Seluruh eksperimen dijalankan pada dua variasi split: **80:20** dan **70:30**.
+All experiments are run under two split ratios: **80:20** and **70:30**.
 
 ---
 
-## Dataset 1: Klasifikasi Kardiovaskular
+## Dataset 1: Cardiovascular Disease Classification
 
-**Model yang dievaluasi:** Logistic Regression, KNN, Decision Tree, Random Forest, SVM
+**Models evaluated:** Logistic Regression, KNN, Decision Tree, Random Forest, SVM
 
-**Metrik:** Accuracy, Precision, Recall, F1-Score, CV Accuracy (StratifiedKFold, k=5)
+**Metrics:** Accuracy, Precision, Recall, F1-Score, CV Accuracy (StratifiedKFold, k=5)
 
 **Preprocessing:**
-- Konversi `age` dari hari ke tahun
-- Filter outlier tekanan darah berdasarkan batas klinis
+- Convert `age` from days to years
+- Filter blood pressure outliers based on clinical bounds
 - StandardScaler
-- SelectKBest `f_classif`, top-8 fitur
+- SelectKBest `f_classif`, top-8 features
 
-**Tuning:** GridSearchCV pada Logistic Regression dan SVM, metrik F1-Score
+**Tuning:** GridSearchCV on Logistic Regression and SVM, metric F1-Score
 
-**Model terbaik:** Logistic Regression (Tuned)
+**Best model:** Logistic Regression (Tuned)
 
 ---
 
-## Dataset 2: Prediksi Konsumsi Energi
+## Dataset 2: Building Energy Consumption Prediction
 
-**Model yang dievaluasi:** Linear Regression, SVR (kernel RBF)
+**Models evaluated:** Linear Regression, SVR (RBF kernel)
 
-**Metrik:** MAE, MSE, RMSE, R², CV R² (KFold, k=5)
+**Metrics:** MAE, MSE, RMSE, R², CV R² (KFold, k=5)
 
 **Preprocessing:**
-- Ekstraksi fitur temporal dari kolom `date` (hour, day_of_week, month, is_weekend)
+- Extract temporal features from `date` column (hour, day_of_week, month, is_weekend)
 - Target `energy_total = Appliances + lights`
-- Hapus kolom `rv1`, `rv2`
-- Outlier removal IQR pada target
+- Drop columns `rv1`, `rv2`
+- IQR outlier removal on target
 - StandardScaler
-- SelectKBest `f_regression`, top-15 fitur
+- SelectKBest `f_regression`, top-15 features
 
-**Tuning:** GridSearchCV untuk Linear Regression, RandomizedSearchCV (16 iterasi) untuk SVR, metrik R²
+**Tuning:** GridSearchCV for Linear Regression, RandomizedSearchCV (16 iterations) for SVR, metric R²
 
-**Model terbaik:** SVR (Tuned, kernel RBF)
+**Best model:** SVR (Tuned, RBF kernel)
 
 ---
 
@@ -103,7 +103,7 @@ scikit-learn
 jupyter
 ```
 
-Install semua dependency:
+Install all dependencies:
 
 ```bash
 pip install pandas numpy matplotlib seaborn scikit-learn jupyter
@@ -111,28 +111,28 @@ pip install pandas numpy matplotlib seaborn scikit-learn jupyter
 
 ---
 
-## Cara Menjalankan
+## How to Run
 
-1. Clone repository ini:
+1. Clone this repository:
 
 ```bash
 git clone https://github.com/willtanoe/mini-project-deep-learning.git
 cd mini-project-deep-learning
 ```
 
-2. Unduh dataset dari tautan di atas dan letakkan di folder `dataset/`
+2. Download the datasets from the links above and place them in the `dataset/` folder
 
-3. Jalankan notebook:
+3. Launch Jupyter:
 
 ```bash
 jupyter notebook
 ```
 
-4. Buka `notebook/dataset1_kardiovaskular.ipynb` atau `notebook/dataset2_energi.ipynb` dan jalankan seluruh cell secara berurutan (Run All)
+4. Open `notebook/dataset1_kardiovaskular.ipynb` or `notebook/dataset2_energi.ipynb` and run all cells in order (Run All)
 
 ---
 
-## Referensi
+## References
 
 - S. Ulianova, *Cardiovascular Disease Dataset*, Kaggle, 2019.
 - L. M. Candanedo, V. Feldheim, D. Deramaix, "Data driven prediction models of energy use of appliances in a low-energy house," *Energy and Buildings*, vol. 140, pp. 81–97, 2017.
@@ -140,4 +140,4 @@ jupyter notebook
 
 ---
 
-*Program Studi S2 Teknik Elektro - Mata Kuliah Pembelajaran Mendalam Untuk Teknik Elektro - Universitas Telkom, Bandung, Indonesia*
+*Master's Program in Electrical Engineering — Deep Learning for Electrical Engineering — Telkom University, Bandung, Indonesia*
