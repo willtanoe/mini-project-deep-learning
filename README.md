@@ -27,11 +27,6 @@ Pipeline machine learning end-to-end pada dua domain: klasifikasi penyakit kardi
 │   ├── dataset1_kardiovaskular.ipynb
 │   └── dataset2_energi.ipynb
 │
-├── laporan/
-│   ├── jurnal_ieee_indo.tex      # Laporan format IEEE (Bahasa Indonesia)
-│   ├── jurnal_ieee_en.tex        # Laporan format IEEE (English)
-│   └── jurnal_ieee.pdf           # PDF hasil compile (jika tersedia)
-│
 └── README.md
 ```
 
