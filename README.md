@@ -118,8 +118,8 @@ pip install pandas numpy matplotlib seaborn scikit-learn jupyter
 1. Clone repository ini:
 
 ```bash
-git clone https://github.com/[username]/[repo-name].git
-cd [repo-name]
+git clone https://github.com/willtanoe/mini-project-deep-learning.git
+cd mini-project-deep-learning
 ```
 
 2. Unduh dataset dari tautan di atas dan letakkan di folder `dataset/`
@@ -131,20 +131,6 @@ jupyter notebook
 ```
 
 4. Buka `notebook/dataset1_kardiovaskular.ipynb` atau `notebook/dataset2_energi.ipynb` dan jalankan seluruh cell secara berurutan (Run All)
-
----
-
-## Compile Laporan LaTeX
-
-Pastikan TeX Live atau MiKTeX sudah terinstal, lalu:
-
-```bash
-cd laporan
-pdflatex jurnal_ieee_indo.tex
-pdflatex jurnal_ieee_indo.tex
-```
-
-Jalankan dua kali agar nomor referensi dan label tabel/gambar lengkap.
 
 ---
 
