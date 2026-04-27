@@ -1,8 +1,6 @@
-# Mini Project: Machine Learning Fundamentals
+# Mini Project: Tugas Besar Deep LEarning
 
-> Deep Learning for Electrical Engineering — S2 Teknik Elektro, Universitas Telkom
-
-Pipeline machine learning end-to-end pada dua domain: klasifikasi penyakit kardiovaskular dan prediksi konsumsi energi bangunan.
+Pipeline machine learning pada dua domain: klasifikasi penyakit kardiovaskular dan prediksi konsumsi energi bangunan.
 
 ---
 
@@ -142,4 +140,4 @@ jupyter notebook
 
 ---
 
-*Program Studi S2 Teknik Elektro — Universitas Telkom, Bandung, Indonesia*
+*Program Studi S2 Teknik Elektro - Mata Kuliah Pembelajaran Mendalam Untuk Teknik Elektro - Universitas Telkom, Bandung, Indonesia*
